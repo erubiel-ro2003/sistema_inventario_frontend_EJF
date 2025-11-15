@@ -1,0 +1,539 @@
+/* ============================================
+   SISTEMA DE INVENTARIO - ESTILOS GENERALES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-btn {
+    width: 133px;
+    height: 40px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    height: 59px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.nav-item {
+    height: 58px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    color: #64748b;
+}
+
+.nav-item:hover {
+    color: #3b82f6;
+    background: #f8fafc;
+}
+
+.nav-item.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+
+.nav-item span {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Main Content */
+.main {
+    margin-top: 147px;
+    padding: 0 16px;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.main h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 48px;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 18px;
+}
+
+.search-input-container {
+    position: relative;
+    flex: 1;
+}
+
+.search-input-container svg {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    z-index: 1;
+}
+
+.search-input {
+    width: 100%;
+    height: 41px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding-left: 44px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+}
+
+.category-select {
+    width: 212px;
+    height: 41px;
+    background: #d9d9d9;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Add Button */
+.add-btn {
+    width: 100%;
+    height: 40px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    gap: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 64px;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background: #059669;
+}
+
+/* Grids (productos, categorías, compras, etc.) */
+.products-grid,
+.categories-grid,
+.purchases-grid,
+.sales-grid,
+.users-grid,
+.movements-grid,
+.returns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* ... (todo tu CSS de cards se mantiene igual aquí) ... */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .products-grid,
+    .categories-grid,
+    .purchases-grid,
+    .sales-grid,
+    .users-grid,
+    .movements-grid,
+    .returns-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid,
+    .categories-grid,
+    .purchases-grid,
+    .sales-grid,
+    .users-grid,
+    .movements-grid,
+    .returns-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .category-select {
+        width: 100%;
+    }
+
+    .nav {
+        overflow-x: auto;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+        min-width: fit-content;
+    }
+}
+
+/* ============================ */
+/* ===== DEVOLUCIONES ========= */
+/* ============================ */
+
+#devoluciones {
+  margin-top: 147px;
+  padding: 0 16px;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#devoluciones h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 48px;
+}
+
+/* GRID */
+.returns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Tarjeta individual */
+.return-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.return-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.return-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.return-id {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Contenido */
+.return-content p {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.return-content em {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.return-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.return-total span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Acciones */
+.return-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Colores de estado */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 12px;
+  color: white;
+}
+
+.status-badge.pending {
+  background: #f59e0b;
+}
+
+.status-badge.completed {
+  background: #10b981;
+}
+
+.status-badge.cancelled {
+  background: #ef4444;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  .returns-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .returns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-section {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .category-select {
+    width: 100%;
+  }
+}
+
+
+/* ==== BOTÓN NUEVA DEVOLUCIÓN (ESTILO BOLT) ==== */
+.add-btn {
+  width: 100%;
+  height: 48px;
+  background-color: #10b981; /* verde Bolt */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 16px 0 48px 0; /* espacio arriba y abajo */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-btn:hover {
+  background-color: #059669;
+}
+
+/* ==== FIX FINAL: Mostrar correctamente el botón "Nueva Devolución" ==== */
+#devoluciones {
+  overflow: visible !important;
+  padding-bottom: 60px;
+}
+
+/* Botón de añadir (idéntico al de Compras Bolt) */
+#devoluciones .add-btn {
+  width: 100%;
+  height: 48px;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;     /* separación del buscador */
+  margin-bottom: 48px;  /* separación antes del grid */
+  transition: background-color 0.2s ease-in-out;
+}
+
+#devoluciones .add-btn:hover {
+  background: #059669;
+}
+
+/* ==== BOTONES DE ACCIÓN PEQUEÑOS (Ver Detalles, Imprimir, etc.) ==== */
+.btn-primary,
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40px; /* un poco más alto para centrado perfecto */
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  padding: 0 18px; /* centra texto horizontalmente */
+}
+
+/* Botón principal azul */
+.btn-primary {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+/* Botón gris secundario */
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+/* =============================== */
+/* 🔧 FIX: Mostrar botón correctamente */
+/* =============================== */
+.content {
+  margin-top: 147px; /* espacio igual al header + nav */
+  padding: 0 16px;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible !important;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 48px;
+  background-color: #10b981 !important; /* verde Bolt */
+  color: #ffffff !important;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 16px; /* separación del título */
+  margin-bottom: 48px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-btn:hover {
+  background-color: #059669 !important;
+}
+

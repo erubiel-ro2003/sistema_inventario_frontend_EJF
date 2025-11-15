@@ -1,0 +1,375 @@
+/* ============================================
+   SISTEMA DE INVENTARIO - ESTILOS GENERALES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-btn {
+    width: 133px;
+    height: 40px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    height: 59px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.nav-item {
+    height: 58px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    color: #64748b;
+}
+
+.nav-item:hover {
+    color: #3b82f6;
+    background: #f8fafc;
+}
+
+.nav-item.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+
+.nav-item span {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Main Content */
+.main {
+    margin-top: 147px;
+    padding: 0 16px;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.main h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 48px;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 18px;
+}
+
+.search-input-container {
+    position: relative;
+    flex: 1;
+}
+
+.search-input-container svg {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    z-index: 1;
+}
+
+.search-input {
+    width: 100%;
+    height: 41px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding-left: 44px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+}
+
+.category-select {
+    width: 212px;
+    height: 41px;
+    background: #d9d9d9;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Add Button */
+.add-btn {
+    width: 100%;
+    height: 40px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    gap: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 64px;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background: #059669;
+}
+
+/* Grids (productos, categorías, compras, etc.) */
+.products-grid,
+.categories-grid,
+.purchases-grid,
+.sales-grid,
+.users-grid,
+.movements-grid,
+.returns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* ... (todo tu CSS de cards se mantiene igual aquí) ... */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .products-grid,
+    .categories-grid,
+    .purchases-grid,
+    .sales-grid,
+    .users-grid,
+    .movements-grid,
+    .returns-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid,
+    .categories-grid,
+    .purchases-grid,
+    .sales-grid,
+    .users-grid,
+    .movements-grid,
+    .returns-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .category-select {
+        width: 100%;
+    }
+
+    .nav {
+        overflow-x: auto;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+        min-width: fit-content;
+    }
+}
+
+.register-text {
+    font-size: 14px;
+    color: #475569;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.register-text a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f8fafc;
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h1 {
+    font-size: 22px;
+    color: #3b82f6;
+    margin-bottom: 8px;
+}
+
+.login-box h2 {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.login-form,
+.register-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-form label,
+.register-form label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+.login-form input,
+.register-form input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Botón principal */
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
